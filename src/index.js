@@ -4,8 +4,6 @@ import nodemon from "nodemon";
 import dotenv from "dotenv"
 
 import joi from "joi";
-import bcrypt from "bcrypt"
-import { v4 as uuidV4 } from "uuid";
 
 import { MongoClient } from "mongodb";
 import usersRoutes from "./routes/users.routes.js"
