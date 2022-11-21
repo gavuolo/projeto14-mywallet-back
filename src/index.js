@@ -26,5 +26,4 @@ export const schemaSignIn = joi.object({
     password: joi.string().required(),
 })
 
-
 app.listen(5000, () => console.log('Listening on port 5000...'))

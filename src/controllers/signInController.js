@@ -1,5 +1,5 @@
 import { schemaSignUp } from "../index.js"
-import { userCollection , sessionsCollection} from "../DataBase/db.js"
+import { userCollection , sessionsCollection} from "../database/db.js"
 import bcrypt from "bcrypt"
 import { v4 as uuidV4 } from "uuid";
 

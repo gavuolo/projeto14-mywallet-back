@@ -1,5 +1,5 @@
 import { schemaSignUp } from "../index.js"
-import { userCollection , sessionsCollection} from "../DataBase/db.js"
+import { userCollection , sessionsCollection} from "../database/db.js"
 import bcrypt from "bcrypt"
 import { v4 as uuidV4 } from "uuid";
 
@@ -19,7 +19,7 @@ export async function signUp(req, res) {
             return
         }
         const hashPassword = bcrypt.hashSync(user.password, 10);
-        await userCollection.insertOne({...user, password: hashPassword});
+        await userCollection.insertOne({...user, password: hashPassword, transactions:[]});
         res.sendStatus(201)
 
     } catch (error) {
