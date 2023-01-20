@@ -13,4 +13,4 @@ try{
 
 const db = mongoClient.db("MyWallet")
 export const userCollection = db.collection('users');
-export const sessions = db.collection('sessions');
+export const sessionsCollection = db.collection('sessions');

@@ -1,9 +1,9 @@
 import { signUpSchema } from "../model/signUpModel.js";
 
 export function signUpValidation(req, res, next) {
-  const { name, email, password , confirmPassword} = req.body;
+  const { name, email, password, confirmPassword } = req.body;
   const validation = signUpSchema.validate(
-    { name, email, password , confirmPassword},
+    { name, email, password, confirmPassword },
     { abortEarly: false }
   );
   if (validation.error) {
