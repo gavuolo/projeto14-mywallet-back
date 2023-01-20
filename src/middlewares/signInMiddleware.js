@@ -7,11 +7,11 @@ export function signInValidation(req, res, next) {
     { email, password },
     { abortEarly: false }
   );
-  if(validation.error){
+  if (validation.error) {
     const messageError = validation.error.details.map(
-        (detail) => detail.message
-      );
-      return res.status(422).send(messageError);
+      (detail) => detail.message
+    );
+    return res.status(422).send(messageError);
   }
-  next()
+  next();
 }
