@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 export async function postSignIn(req, res) {
   const { email, password } = req.body;
   const token = uuidV4()
+  console.log(token)
   try{
     const userExist = await userCollection.findOne({ email });
     if(!userExist){
@@ -16,9 +17,9 @@ export async function postSignIn(req, res) {
     }
     await sessionsCollection.insertOne({
       token, 
-      userId: userExist._id
+      user: userExist._id
     })
-    res.status(201).send({token})
+    res.status(201).send({token, userExist})
   }catch (err){
     console.log(err)
     res.sendStatus(500)
