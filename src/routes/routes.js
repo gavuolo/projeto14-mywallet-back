@@ -10,7 +10,7 @@ const router = Router();
 
 router.post("/sign-up", signUpValidation, postSignUp);
 router.post("/sign-in", signInValidation, postSignIn);
-
 router.post("/balance", balanceValidation, postBalance);
 router.get("/balance", getBalance);
+
 export default router;
